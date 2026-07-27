@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
@@ -105,6 +106,7 @@ export default function RootLayout({
         <Footer />
         <JsonLd data={[localBusinessJsonLd(), websiteJsonLd()]} />
       </body>
+      <GoogleAnalytics gaId="G-632F3TP6SW" />
     </html>
   );
 }
