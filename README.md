@@ -56,9 +56,12 @@ npm run lint    # eslint
 - **Add real photography** (workshop, dyno, builds, plant) to replace the
   CSS/SVG-only hero and cards, and add a static `app/opengraph-image` photo if
   preferred over the generated one.
-- **Wire up the contact form.** It currently composes an email via the visitor's
-  mail client (`mailto:`). For inbox-independent delivery, point
-  `components/ContactForm.tsx` at a form endpoint (e.g. Formspree, or a Next.js
-  route handler).
+- **Point the contact form at a lead endpoint.** Set
+  `NEXT_PUBLIC_CONTACT_ENDPOINT` (Formspree URL or Azoria CRM ingest URL) and
+  optionally `NEXT_PUBLIC_TURNSTILE_SITE_KEY` for Cloudflare Turnstile — see
+  `.env.example`. The form AJAX-POSTs `name`, `phone`, `email`, `service`,
+  `rig`, `message`, `page`, a `_gotcha` honeypot and (when enabled) a
+  `cf-turnstile-response` token. Until the env var is set it falls back to a
+  `mailto:` composer.
 - Add Google Search Console verification via `metadata.verification` in
   `app/layout.tsx` once the domain is connected.
