@@ -202,3 +202,18 @@
     transparent 55%
   );
 }
+
+/*
+ * @azoria/lead-form ships its honeypot hidden only by its optional
+ * styles.css, which we deliberately don't import — this site has its own
+ * design system and the package is restyled via its classNames prop instead.
+ * There is no classNames hook for the honeypot, so without this rule the
+ * bot-trap field renders visibly to real visitors.
+ */
+.azoria-lead-form__gotcha {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
