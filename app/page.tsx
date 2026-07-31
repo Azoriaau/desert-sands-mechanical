@@ -110,7 +110,7 @@ function DynoCard() {
     <figure className="card relative z-10 overflow-hidden">
       <figcaption className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-5 py-3">
         <span className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-fg">
-          Dyno run — Hilux 2.8
+          Dyno run — LandCruiser VDJ76
         </span>
         <span className="font-display text-[0.65rem] uppercase tracking-[0.18em] text-muted">
           Measured in-house
@@ -120,16 +120,17 @@ function DynoCard() {
         viewBox="0 0 340 190"
         className="block w-full"
         role="img"
-        aria-label="Dyno chart: power up from 177 to 215 horsepower and torque up from 450 to 530 newton metres after tuning"
+        aria-label="Dyno chart: power up from 138 to 266 horsepower and torque up from 322 to 841 newton metres after tuning. Torque climbs sharply to a peak in the mid range, then tapers as revs rise."
       >
         {/* grid */}
         <g stroke="#2a2a31" strokeWidth="1">
           <path d="M20 20H320M20 57.5H320M20 95H320M20 132.5H320M20 170H320" />
           <path d="M20 20V170M95 20V170M170 20V170M245 20V170M320 20V170" opacity="0.5" />
         </g>
-        {/* stock (dashed) */}
+        {/* On-arrival baseline (dashed). Power peaks late and low; torque
+            stays almost flat across the range. */}
         <path
-          d="M20 168 C 120 165 220 140 320 92"
+          d="M20 153 C 80 149 150 139 220 130 C 260 125 295 120 320 120"
           fill="none"
           stroke="#22d3ee"
           strokeOpacity="0.35"
@@ -137,29 +138,31 @@ function DynoCard() {
           strokeDasharray="5 5"
         />
         <path
-          d="M20 158 C 70 150 100 105 160 98 S 260 100 320 102"
+          d="M20 132 C 70 128 120 121 153 119 C 200 121 270 125 320 127"
           fill="none"
           stroke="#e4572e"
           strokeOpacity="0.35"
           strokeWidth="2"
           strokeDasharray="5 5"
         />
-        {/* tuned (solid) */}
+        {/* Stage 2 (solid). Big single turbo: torque comes on hard, spikes
+            early in the range, then tapers as revs climb — power peaks just
+            after it and holds rather than building to the right. */}
         <path
-          d="M20 165 C 120 160 220 110 320 40"
+          d="M20 137 C 60 132 92 124 115 103 C 130 89 150 77 173 72 C 205 76 250 90 320 104"
           fill="none"
           stroke="#22d3ee"
           strokeWidth="2.5"
         />
         <path
-          d="M20 150 C 70 140 95 70 150 58 S 250 62 320 62"
+          d="M20 69 C 68 65 100 60 118 47 C 128 39 135 37 143 37.5 C 158 39 176 44 200 54 C 245 71 288 84 320 91"
           fill="none"
           stroke="#e4572e"
           strokeWidth="2.5"
         />
         <g fontSize="11" fontWeight="600" textAnchor="end">
-          <text x="316" y="34" fill="#22d3ee">215 hp</text>
-          <text x="255" y="50" fill="#e4572e">530 Nm</text>
+          <text x="316" y="34" fill="#e4572e">841 Nm</text>
+          <text x="316" y="50" fill="#22d3ee">266 hp</text>
         </g>
         <g fontSize="9" fill="#9a9aa4">
           <text x="24" y="34">— tuned</text>
@@ -168,13 +171,13 @@ function DynoCard() {
       </svg>
       <div className="grid grid-cols-3 divide-x divide-border border-t border-border text-center">
         <div className="px-2 py-4">
-          <div className="font-display text-2xl font-bold text-sand">+38</div>
+          <div className="font-display text-2xl font-bold text-sand">+129</div>
           <div className="mt-0.5 text-[0.65rem] uppercase tracking-widest text-muted">
             hp at the wheels
           </div>
         </div>
         <div className="px-2 py-4">
-          <div className="font-display text-2xl font-bold text-ember">+80</div>
+          <div className="font-display text-2xl font-bold text-ember">+519</div>
           <div className="mt-0.5 text-[0.65rem] uppercase tracking-widest text-muted">
             Nm of torque
           </div>
