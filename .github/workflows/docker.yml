@@ -56,9 +56,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          # NEXT_PUBLIC_* live in Actions *secrets*, so they must be read with
+          # secrets.* — vars.* reads Actions *variables* and would silently
+          # resolve to an empty string, leaving the contact form on its mailto:
+          # fallback with no build error. If they are ever moved to variables,
+          # these two lines have to move with them.
           build-args: |
-            NEXT_PUBLIC_CONTACT_ENDPOINT=${{ vars.NEXT_PUBLIC_CONTACT_ENDPOINT }}
-            NEXT_PUBLIC_TURNSTILE_SITE_KEY=${{ vars.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+            NEXT_PUBLIC_CONTACT_ENDPOINT=${{ secrets.NEXT_PUBLIC_CONTACT_ENDPOINT }}
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY=${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
 
       - name: Smoke test the image
         run: |
