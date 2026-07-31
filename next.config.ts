@@ -1,25 +1,14 @@
 import type { NextConfig } from "next";
 
-const securityHeaders = [
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "X-DNS-Prefetch-Control", value: "on" },
-  {
-    key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
-  },
-];
-
 const nextConfig: NextConfig = {
+  // The site ships as a static export served by nginx (see Dockerfile).
+  // `next build` writes plain HTML/CSS/JS to ./out.
+  output: "export",
   poweredByHeader: false,
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-    ];
-  },
+  // Static export cannot run the default image optimizer.
+  images: { unoptimized: true },
+  // NOTE: `headers()` is a no-op under `output: "export"` — the security
+  // headers now live in nginx/default.conf.
 };
 
 export default nextConfig;

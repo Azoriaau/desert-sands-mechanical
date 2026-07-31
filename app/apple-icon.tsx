@@ -1,5 +1,8 @@
 import { ImageResponse } from "next/og";
 
+// Required by `output: "export"`: render this metadata route at build time.
+export const dynamic = "force-static";
+
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 

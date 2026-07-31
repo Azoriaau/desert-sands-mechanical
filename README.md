@@ -44,10 +44,32 @@ Brand direction is documented in `docs/brand-guidelines.md`. Logo assets
 
 ```bash
 npm run dev     # http://localhost:3000
-npm run build   # production build
-npm start       # serve the production build
+npm run build   # static export -> ./out
 npm run lint    # eslint
 ```
+
+`next start` is not used — the site is a static export (`output: "export"`), so
+serve `./out` with any static file server (`npx serve out`) or the container
+below.
+
+## Deploy
+
+Every push builds `ghcr.io/azoriaau/desert-sands-mechanical` via
+`.github/workflows/docker.yml`; pushes to `main` also move the `latest` tag.
+The image is stock `nginx:alpine` serving the export on port **3000**
+(config in `nginx/default.conf`, health probe at `/healthz`).
+
+The TrueNAS host runs `deploy/compose.yaml` — the site on `3001:3000` plus
+Watchtower, which polls GHCR every 60s and redeploys when `latest` moves.
+
+`NEXT_PUBLIC_*` values are baked in at build time, so they are set as GitHub
+**repository variables** (Settings → Secrets and variables → Actions →
+Variables) and passed to the image as build args:
+
+- `NEXT_PUBLIC_CONTACT_ENDPOINT`
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
+
+Changing either one requires a rebuild, not a container restart.
 
 ## Before launch (client to-dos)
 

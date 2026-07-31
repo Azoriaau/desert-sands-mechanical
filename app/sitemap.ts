@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
 import { site, services } from "@/lib/site";
 
+// Required by `output: "export"`: render this metadata route at build time.
+export const dynamic = "force-static";
+
 // Static build date keeps <lastmod> stable between deploys until content changes.
 const lastModified = "2026-07-18";
 
