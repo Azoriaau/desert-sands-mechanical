@@ -25,7 +25,6 @@ FROM nginx:1.29-alpine AS runner
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/out /usr/share/nginx/html
 
-# Port 3000 to match the compose file on the TrueNAS host (3001:3000).
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

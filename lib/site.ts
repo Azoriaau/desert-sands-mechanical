@@ -19,7 +19,7 @@ export const site = {
     country: "AU",
   },
   geo: {
-    // Approximate — verify against the exact street coordinates before launch.
+    // Feeds the LocalBusiness structured data alongside `address`.
     lat: -28.7897,
     lng: 114.6497,
   },

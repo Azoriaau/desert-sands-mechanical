@@ -54,36 +54,17 @@ below.
 
 ## Deploy
 
-Every push builds `ghcr.io/azoriaau/desert-sands-mechanical` via
-`.github/workflows/docker.yml`; pushes to `main` also move the `latest` tag.
-The image is stock `nginx:alpine` serving the export on port **3000**
-(config in `nginx/default.conf`, health probe at `/healthz`).
+Every push builds a container image via `.github/workflows/docker.yml`; pushes
+to `main` also move the `latest` tag. The image is stock `nginx:alpine` serving
+the static export on port **3000** (config in `nginx/default.conf`, health probe
+at `/healthz`).
 
-The TrueNAS host runs `deploy/compose.yaml` — the site on `3001:3000` plus
-Watchtower, which polls GHCR every 60s and redeploys when `latest` moves.
-
-`NEXT_PUBLIC_*` values are baked in at build time, so they are set as GitHub
-**repository variables** (Settings → Secrets and variables → Actions →
-Variables) and passed to the image as build args:
+`NEXT_PUBLIC_*` values are inlined into the client bundle at build time, so they
+are passed to the image as build args from the repository's Actions secrets:
 
 - `NEXT_PUBLIC_CONTACT_ENDPOINT`
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
 
-Changing either one requires a rebuild, not a container restart.
-
-## Before launch (client to-dos)
-
-- **Verify the map coordinates** in `lib/site.ts` (`geo`) against the exact
-  street address.
-- **Add real photography** (workshop, dyno, builds, plant) to replace the
-  CSS/SVG-only hero and cards, and add a static `app/opengraph-image` photo if
-  preferred over the generated one.
-- **Point the contact form at a lead endpoint.** Set
-  `NEXT_PUBLIC_CONTACT_ENDPOINT` (Formspree URL or Azoria CRM ingest URL) and
-  optionally `NEXT_PUBLIC_TURNSTILE_SITE_KEY` for Cloudflare Turnstile — see
-  `.env.example`. The form AJAX-POSTs `name`, `phone`, `email`, `service`,
-  `rig`, `message`, `page`, a `_gotcha` honeypot and (when enabled) a
-  `cf-turnstile-response` token. Until the env var is set it falls back to a
-  `mailto:` composer.
-- Add Google Search Console verification via `metadata.verification` in
-  `app/layout.tsx` once the domain is connected.
+Changing either one requires a rebuild, not a container restart. With
+`NEXT_PUBLIC_CONTACT_ENDPOINT` unset the contact form falls back to a `mailto:`
+composer — see `.env.example`.

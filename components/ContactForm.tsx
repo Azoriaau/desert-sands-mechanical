@@ -9,8 +9,8 @@ import { MailtoForm } from "./MailtoForm";
  *
  * Both values are inlined into the client bundle at build time, so whichever
  * machine runs `next build` needs them — they are not read at runtime. Neither
- * is a secret: the ingest endpoint only accepts enquiries and can be rotated
- * from the tenant page, and a Turnstile site key is public by design.
+ * is a secret: the ingest endpoint only accepts enquiries and can be rotated,
+ * and a Turnstile site key is public by design.
  *
  * With the endpoint unset the form falls back to a mailto: composer, so a build
  * without it still has a working contact page.
