@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { LeadForm } from "@azoria/lead-form";
 import { site, services } from "@/lib/site";
 import { MailtoForm } from "./MailtoForm";
@@ -33,6 +34,24 @@ export function ContactForm() {
       services={[...services.map((s) => s.title), "Other"]}
       showRig
       turnstileSiteKey={turnstileSiteKey}
+      /* The package default is written from the vendor's side — it calls the
+         business "they" while promising "we'll email you", which reads wrong
+         on the business's own site. Passing `notice` replaces the whole
+         default including its privacy-policy link, so this carries its own. */
+      notice={
+        <>
+          We use your details only to answer this enquiry &mdash; never sold,
+          never used for marketing. You&rsquo;ll get a copy by email with a link
+          to delete it at any time. See our{" "}
+          <Link
+            href="/privacy"
+            className="text-sand underline underline-offset-2"
+          >
+            privacy policy
+          </Link>
+          .
+        </>
+      }
       /* Kept verbatim from the previous form — the package's defaults would
          otherwise silently reword a live client site ("Your name", "What do
          you need?"). */

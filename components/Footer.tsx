@@ -96,7 +96,12 @@ export function Footer() {
           <p>
             © {year} {site.legalName}. All rights reserved.
           </p>
-          <p>ABN {site.abn} · Licensed Repairer, Western Australia</p>
+          <p>
+            ABN {site.abn} · Licensed Repairer, Western Australia ·{" "}
+            <Link href="/privacy" className="transition-colors hover:text-sand">
+              Privacy
+            </Link>
+          </p>
           <p>
             Website by{" "}
             <a
