@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@azoria/lead-form": "^0.1.1",
+    "@azoria/lead-form": "^0.2.1",
     "@next/third-parties": "^16.2.10",
     "next": "16.2.10",
     "react": "19.2.4",

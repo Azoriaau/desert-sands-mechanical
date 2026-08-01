@@ -1,5 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+// Subpath, not the package root: the root is "use client" for the form's
+// sake, and this page is server-rendered. Keeps the countries named here in
+// step with the ones in the form's collection notice.
+import { formatRecipients } from "@azoria/lead-form/disclosure";
 import { PageHero } from "@/components/PageHero";
 import { site } from "@/lib/site";
 
@@ -91,8 +95,10 @@ export default function PrivacyPage() {
                 us. They don&rsquo;t use your details for their own purposes.
               </p>
               <p>
-                The servers running that system are located in Singapore, so
-                your details are stored overseas.
+                Your enquiry is stored and handled overseas, in{" "}
+                {formatRecipients()}. The servers holding it are in Singapore.
+                The United States covers Cloudflare, which delivers this site
+                and screens the contact form for bots.
               </p>
             </Section>
 
