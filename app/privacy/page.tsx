@@ -3,7 +3,10 @@ import type { Metadata } from "next";
 // Subpath, not the package root: the root is "use client" for the form's
 // sake, and this page is server-rendered. Keeps the countries named here in
 // step with the ones in the form's collection notice.
-import { formatRecipients } from "@azoria/lead-form/disclosure";
+import {
+  AZORIA_PRIVACY_URL,
+  privacyPolicyClause,
+} from "@azoria/lead-form/disclosure";
 import { PageHero } from "@/components/PageHero";
 import { site } from "@/lib/site";
 
@@ -85,20 +88,15 @@ export default function PrivacyPage() {
             </Section>
 
             <Section title="Where your enquiry is stored">
+              {/* Drop-in from the package — same paragraph on every Azoria
+                  client site, so the countries and Azoria's role are changed
+                  in one place rather than forty. */}
               <p>
-                You send your enquiry to us, and we decide what it&rsquo;s used
-                for &mdash; answering you and doing the work. We don&rsquo;t run
-                the system that holds it. That&rsquo;s Azoria Leads, operated by{" "}
-                <a href="https://azoria.com.au" target="_blank" rel="noopener">
-                  Azoria
-                </a>, who store and handle enquiries only to run that system for
-                us. They don&rsquo;t use your details for their own purposes.
-              </p>
-              <p>
-                Your enquiry is stored and handled overseas, in{" "}
-                {formatRecipients()}. The servers holding it are in Singapore.
-                The United States covers Cloudflare, which delivers this site
-                and screens the contact form for bots.
+                {privacyPolicyClause()}{" "}
+                <a href={AZORIA_PRIVACY_URL} target="_blank" rel="noopener">
+                  Azoria&rsquo;s privacy policy
+                </a>{" "}
+                covers how they handle it.
               </p>
             </Section>
 

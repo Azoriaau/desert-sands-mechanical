@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { LeadForm } from "@azoria/lead-form";
 import { site, services } from "@/lib/site";
 import { MailtoForm } from "./MailtoForm";
@@ -34,24 +33,11 @@ export function ContactForm() {
       services={[...services.map((s) => s.title), "Other"]}
       showRig
       turnstileSiteKey={turnstileSiteKey}
-      /* The package default is written from the vendor's side — it calls the
-         business "they" while promising "we'll email you", which reads wrong
-         on the business's own site. Passing `notice` replaces the whole
-         default including its privacy-policy link, so this carries its own. */
-      notice={
-        <>
-          We use your details only to answer this enquiry &mdash; never sold,
-          never used for marketing. You&rsquo;ll get a copy by email with a link
-          to delete it at any time. See our{" "}
-          <Link
-            href="/privacy"
-            className="text-sand underline underline-offset-2"
-          >
-            privacy policy
-          </Link>
-          .
-        </>
-      }
+      /* No `notice` override: the package default is the standard wording
+         across every Azoria client site, and it already names Azoria Leads
+         and links both here and to Azoria's own policy. Overriding it here
+         is how this site's notice drifted from everyone else's. */
+      privacyPolicyUrl="/privacy"
       /* Kept verbatim from the previous form — the package's defaults would
          otherwise silently reword a live client site ("Your name", "What do
          you need?"). */
@@ -73,11 +59,15 @@ export function ContactForm() {
         input: `mt-1.5 ${fieldClass}`,
         select: `mt-1.5 ${fieldClass}`,
         textarea: `mt-1.5 ${fieldClass} resize-y`,
-        notice: "text-xs text-muted",
+        notice: "text-xs text-muted text-center max-w-[52ch] mx-auto",
         noticeLink: "text-sand underline underline-offset-2",
         consent: "flex items-start gap-2 text-xs text-muted",
         error: "text-sm text-ember",
-        button: "btn btn-primary justify-self-start",
+        /* The form is a grid, so the button carried `justify-self-start` to
+           stop it stretching. It sits in a flex row with Turnstile now, where
+           that does nothing — the row keeps it at its natural width. */
+        actions: "flex flex-wrap items-center gap-4",
+        button: "btn btn-primary",
         success: "card p-6 md:p-8",
         successHeading: "font-display text-lg text-fg",
         successBody: "mt-2 text-sm text-muted",
