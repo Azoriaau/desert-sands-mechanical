@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
@@ -105,8 +104,12 @@ export default function RootLayout({
         </main>
         <Footer />
         <JsonLd data={[localBusinessJsonLd(), websiteJsonLd()]} />
+        <script
+          defer
+          src="https://leads.azoria.com.au/a.js"
+          data-key="lk_q8ynw21ZyfDelz5NYEHleFDK"
+        />
       </body>
-      <GoogleAnalytics gaId="G-632F3TP6SW" />
     </html>
   );
 }
