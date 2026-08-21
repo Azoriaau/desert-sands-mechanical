@@ -57,7 +57,7 @@ export default function TuningPage() {
               and transmission refinement, built for heavy hauling, agricultural
               duty and recreational off-road.
             </Callout>
-            <Callout title="Emissions control — off-road / racing use only">
+            <Callout title="Emissions control – off-road / racing use only">
               Specialised emissions strategies for off-road, agricultural and
               motorsport applications on non-road-registered machinery, to
               address SCR derates, plugged DPFs and EGR issues.

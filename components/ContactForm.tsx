@@ -8,7 +8,7 @@ import { MailtoForm } from "./MailtoForm";
  * Enquiries post to Azoria Leads via @azoria/lead-form.
  *
  * Both values are inlined into the client bundle at build time, so whichever
- * machine runs `next build` needs them — they are not read at runtime. Neither
+ * machine runs `next build` needs them – they are not read at runtime. Neither
  * is a secret: the ingest endpoint only accepts enquiries and can be rotated,
  * and a Turnstile site key is public by design.
  *
@@ -38,7 +38,7 @@ export function ContactForm() {
          and links both here and to Azoria's own policy. Overriding it here
          is how this site's notice drifted from everyone else's. */
       privacyPolicyUrl="/privacy"
-      /* Kept verbatim from the previous form — the package's defaults would
+      /* Kept verbatim from the previous form – the package's defaults would
          otherwise silently reword a live client site ("Your name", "What do
          you need?"). */
       labels={{
@@ -50,7 +50,7 @@ export function ContactForm() {
         message: "How can we help?",
         submit: "Send enquiry",
         successHeading: "Enquiry received.",
-        successBody: "Thanks — we'll be in touch shortly.",
+        successBody: "Thanks – we'll be in touch shortly.",
       }}
       classNames={{
         form: "card grid gap-5 p-6 md:p-8",
@@ -65,7 +65,7 @@ export function ContactForm() {
         error: "text-sm text-ember",
         /* The form is a grid, so the button carried `justify-self-start` to
            stop it stretching. It sits in a flex row with Turnstile now, where
-           that does nothing — the row keeps it at its natural width. */
+           that does nothing – the row keeps it at its natural width. */
         actions: "flex flex-wrap items-center gap-4",
         button: "btn btn-primary",
         success: "card p-6 md:p-8",

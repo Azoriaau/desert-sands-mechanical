@@ -160,7 +160,7 @@
   }
 }
 
-/* Outlined display type — falls back to solid accent where stroke is unsupported */
+/* Outlined display type – falls back to solid accent where stroke is unsupported */
 .text-stroke {
   color: var(--color-sand);
 }

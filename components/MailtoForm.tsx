@@ -7,7 +7,7 @@ import { ArrowIcon } from "./icons";
 /**
  * Fallback used when NEXT_PUBLIC_CONTACT_ENDPOINT is unset: composes the
  * enquiry in the visitor's mail app instead of posting it anywhere. Kept so a
- * build without the endpoint still has a working contact page — see
+ * build without the endpoint still has a working contact page – see
  * ContactForm.tsx. Once the Azoria Leads endpoint is configured everywhere the
  * site is built, this file can go.
  */
@@ -41,7 +41,7 @@ export function MailtoForm() {
       "",
       String(data.get("message") ?? ""),
     ].join("\n");
-    const subject = `Enquiry${data.get("service") ? ` — ${data.get("service")}` : ""}${
+    const subject = `Enquiry${data.get("service") ? ` – ${data.get("service")}` : ""}${
       data.get("name") ? ` from ${data.get("name")}` : ""
     }`;
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
@@ -140,7 +140,7 @@ export function MailtoForm() {
         </div>
       </div>
 
-      {/* Honeypot — hidden from real visitors, tempting to bots. */}
+      {/* Honeypot – hidden from real visitors, tempting to bots. */}
       <div
         aria-hidden
         className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
@@ -162,7 +162,7 @@ export function MailtoForm() {
         </button>
         <p className="text-xs text-muted" aria-live="polite">
           {sent
-            ? "Opening your email app — if nothing happens, email us directly."
+            ? "Opening your email app – if nothing happens, email us directly."
             : "This opens your email app addressed to our office."}
         </p>
       </div>

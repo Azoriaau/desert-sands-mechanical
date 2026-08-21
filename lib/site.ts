@@ -4,7 +4,7 @@ export const site = {
   short: "DSM",
   tagline: "4WD Tuning · Diesel Performance",
   description:
-    "Custom dyno tuning, diesel 4WD servicing and performance upgrades in Geraldton, WA — backed by full heavy diesel capability across road transport, earthmoving, plant and equipment hire for the Midwest.",
+    "Custom dyno tuning, diesel 4WD servicing and performance upgrades in Geraldton, WA – backed by full heavy diesel capability across road transport, earthmoving, plant and equipment hire for the Midwest.",
   url: "https://www.desertsandsmechanical.com",
   abn: "82 632 154 093",
   phone: "0407 295 782",
@@ -167,7 +167,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "I cannot praise DSM highly enough. I put AdBlue in my campervan thinking it was diesel. It was midday on a Saturday. I contacted DSM (had been given their card) and Jesse offered to open his workshop. He worked painstakingly on the van for 4 hours and got it back on the road. Great expertise and kindness — a remarkable combination. Thanks Jesse.",
+      "I cannot praise DSM highly enough. I put AdBlue in my campervan thinking it was diesel. It was midday on a Saturday. I contacted DSM (had been given their card) and Jesse offered to open his workshop. He worked painstakingly on the van for 4 hours and got it back on the road. Great expertise and kindness – a remarkable combination. Thanks Jesse.",
     author: "Marianne Batenburg",
     detail: "Google review",
   },

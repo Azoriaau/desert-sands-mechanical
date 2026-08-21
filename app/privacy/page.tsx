@@ -88,7 +88,7 @@ export default function PrivacyPage() {
             </Section>
 
             <Section title="Where your enquiry is stored">
-              {/* Drop-in from the package — same paragraph on every Azoria
+              {/* Drop-in from the package – same paragraph on every Azoria
                   client site, so the countries and Azoria's role are changed
                   in one place rather than forty. */}
               <p>

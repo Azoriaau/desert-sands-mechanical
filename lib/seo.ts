@@ -43,7 +43,7 @@ export function pageMetadata({
 
 const streetAddress = `${site.address.street}, ${site.address.suburb} ${site.address.state} ${site.address.postcode}`;
 
-/** schema.org AutoRepair / LocalBusiness node — the anchor for local SEO. */
+/** schema.org AutoRepair / LocalBusiness node – the anchor for local SEO. */
 export function localBusinessJsonLd() {
   return {
     "@context": "https://schema.org",

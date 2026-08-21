@@ -4,7 +4,7 @@ import { PhoneIcon, ArrowIcon } from "./icons";
 
 export function CTABand({
   heading = "Ready to wake your rig up?",
-  sub = "Custom dyno tunes, 4WD servicing and performance upgrades — and if it's bigger than a ute, we've got that covered too.",
+  sub = "Custom dyno tunes, 4WD servicing and performance upgrades – and if it's bigger than a ute, we've got that covered too.",
 }: {
   heading?: string;
   sub?: string;

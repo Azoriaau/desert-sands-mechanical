@@ -68,7 +68,7 @@ function Hero() {
         <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
           <div>
             <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-muted">
-              Utakarra workshop — Geraldton &amp; the Midwest, WA
+              Utakarra workshop – Geraldton &amp; the Midwest, WA
             </p>
             <h1 className="mt-6 text-5xl leading-[0.9] sm:text-7xl lg:text-[5.25rem] xl:text-8xl">
               More torque.
@@ -77,7 +77,7 @@ function Hero() {
             </h1>
             <p className="mt-7 max-w-xl text-lg text-muted md:text-xl">
               Custom dyno tunes, diesel 4WD servicing and performance builds
-              out of Utakarra — every job proven on our own dyno. And when the
+              out of Utakarra – every job proven on our own dyno. And when the
               Midwest&rsquo;s big gear breaks down, they call us too.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
@@ -110,7 +110,7 @@ function DynoCard() {
     <figure className="card relative z-10 overflow-hidden">
       <figcaption className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-5 py-3">
         <span className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-fg">
-          Dyno run — LandCruiser VDJ76
+          Dyno run – LandCruiser VDJ76
         </span>
         <span className="font-display text-[0.65rem] uppercase tracking-[0.18em] text-muted">
           Measured in-house
@@ -146,7 +146,7 @@ function DynoCard() {
           strokeDasharray="5 5"
         />
         {/* Stage 2 (solid). Big single turbo: torque comes on hard, spikes
-            early in the range, then tapers as revs climb — power peaks just
+            early in the range, then tapers as revs climb – power peaks just
             after it and holds rather than building to the right. */}
         <path
           d="M20 137 C 60 132 92 124 115 103 C 130 89 150 77 173 72 C 205 76 250 90 320 104"
@@ -165,7 +165,7 @@ function DynoCard() {
           <text x="316" y="50" fill="#22d3ee">266 hp</text>
         </g>
         <g fontSize="9" fill="#9a9aa4">
-          <text x="24" y="34">— tuned</text>
+          <text x="24" y="34">– tuned</text>
           <text x="24" y="46">-- stock</text>
         </g>
       </svg>
@@ -373,7 +373,7 @@ function ServiceAreaSection() {
           </h2>
           <p className="mt-4 max-w-xl text-muted">
             Based in Utakarra, we tune and service 4WDs from right across the
-            Midwest — and back it up with field service for mine sites and
+            Midwest – and back it up with field service for mine sites and
             civil operations statewide. Call to check coverage for your site.
           </p>
         </div>
