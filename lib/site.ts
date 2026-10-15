@@ -40,7 +40,8 @@ export const nav = [
   { label: "Road Transport", href: "/road-transport" },
   { label: "Earthmoving & Plant", href: "/earthmoving-plant" },
   { label: "Equipment Hire", href: "/equipment-hire" },
-  { label: "Shop", href: "/shop" },
+  // External storefront on its own subdomain.
+  { label: "Shop", href: "https://shop.desertsandsmechanical.com" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
